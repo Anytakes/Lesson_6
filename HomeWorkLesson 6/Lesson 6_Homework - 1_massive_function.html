@@ -1,20 +1,20 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
-function checkTheNumber (Enter) {
-	if (isNaN(Enter) == true) {
+function checkTheNumber(enter) {
+	if (isNaN(enter)) {
 		do {
-			Enter = prompt("Вы ввели некорректные данные. Введите числовое значение: ");
-		} while (isNaN(Enter) == true);
+			enter = prompt("Вы ввели некорректные данные. Введите числовое значение:");
+	} while (isNaN(enter));
 	}
-		return Enter;
+		return enter;
 	}
 
 function generateArray(n) {
 	let genArray = [];
 	for (let i = 1; i <= n; i++) {
-			genArray.push(i);
-		}
+		genArray.push(i);
+}
 	return genArray;
 }
 
@@ -22,6 +22,6 @@ let userNumber = +prompt("Enter the numbers of elements.");
 userNumber = checkTheNumber(userNumber);
 let newArray = generateArray(userNumber);
 
-alert(`[ ${newArray} ]`);
+alert(`[${newArray.join(', ')}] `);
 
 </script> 
