@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function checkTheNumber (enter) {
+	if (isNaN(enter)) {
+		do {
+			enter = prompt('Вы ввели некорректные данные. Введите числовое значение:\n\nЕсли хотите закончить ввод и узнать сумму, оставьте поле пустым и нажмите Enter');
+			if (!enter) {
+				break;
+			}
+		} while (isNaN(enter));
+	}
+		return enter;
+}
+
+function checkEmptyArray(massive) {
+	if (massive == []) {
+		massive = "Вы ничего не ввели"
+	}
+	return massive
+}
+
+function parityOfNumber(massive) {
+	let parityArray = []
+	for (var i = 0; i < massive.length; i++) {
+		if (!(massive[i] % 2)) {
+			parityArray.push(massive[i]);
+		} ;
+	}
+	return parityArray
+}
+
+let newArray = [];
+let agr;
+do{
+	agr = prompt(`Количество введенных чисел: ${newArray.length}\nВводите числа, из которых нужно определить минималььное и нажимайте Enter. \n\nЕсли закончили вводу, оставьте поле пустым и нажмите Enter`);
+		if (agr) {
+			agr = checkTheNumber(agr);
+				if (!agr)
+					break;
+				newArray.push(agr);	
+			}
+} while (agr);
+
+
+result = parityOfNumber(newArray);
+alert(newArray);
+alert(result);
+
+</script> 

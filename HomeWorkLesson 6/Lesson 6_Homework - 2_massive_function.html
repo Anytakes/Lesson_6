@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function checkTheNumber (enter) {
+	if (isNaN(enter)) {
+		do {
+			enter = prompt('Вы ввели некорректные данные. Введите числовое значение:\n\nЕсли хотите закончить ввод и узнать сумму, оставьте поле пустым и нажмите Enter');
+			if (!enter) {
+				break;
+			}
+		} while (isNaN(enter));
+	}
+		return enter;
+}
+
+
+function summOfArray(massive) {
+	let sum = 0;
+	for (var i = 0; i < massive.length; i++) {
+		sum += parseInt(massive[i]);
+	}
+	return sum
+}
+
+let newArray = [];
+let agr;
+do{
+	agr = prompt(`Количество введенных чисел: ${newArray.length}\nВводите числа, которые нужно суммировать и нажимайте Enter. \n\nЕсли хотите узнать сумму чисел, оставьте поле пустым и нажмите Enter`);
+		if (agr) {
+			agr = checkTheNumber(agr);
+				if (!agr)
+					break;
+				newArray.push(agr);	
+			}
+} while (agr);
+
+alert(newArray);
+result = summOfArray(newArray);
+alert(result);
+
+</script> 
