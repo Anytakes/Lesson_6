@@ -1,0 +1,56 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+alert ("Отгадай загадки.")
+
+let riddles =["Сто одежёк и все без застёжек.", "Висит груша - нельзя скушать.",  "Холодный горячий, висячий, стоячий."];
+let answers = [ 
+	["бомж" , "лук"], 
+	["лампа" , "лампочка"], 
+	["душ" , "смеситель"]
+	]
+let userAnswers = [];
+
+for (let i = 0; i < riddles.length; i++) {
+	userAnswers.push(prompt(riddles[i]).toLowerCase());
+}
+
+function checkAnswers(answers , userAnswers) {
+	let score = 0;
+	for (let i = 0; i < answers.length; i++) {
+		for (let y = 0; y < answers.length; y++ ) {
+			if (userAnswers[i] == answers[i][y]) {
+			score ++
+			}
+		}
+	}
+	return score
+}
+
+alert(`Количество првильный ответов: ${checkAnswers(answers , userAnswers)}`);
+
+// var userAnswer1 = prompt("Сто одежёк и все без застёжек.");
+// var userAnswer2 = prompt("Висит груша - нельзя скушать.");
+// var userAnswer3 = prompt("Холодный горячий, висячий, стоячий.");
+
+// var answer1 = "лук";
+// var answer2 = "лампочка";
+// var answer3 = "душ";
+
+// var score = 0;
+
+
+// 		if (userAnswer1 == answer1) {
+// 			score++;}
+
+// 		if (userAnswer2 == answer2) {
+// 				score++;}
+			
+// 		if (userAnswer3 == answer3) {
+// 				score++;}
+
+
+// 			alert ( "Загадки кончились, сори.\nКоличество правильных ответов: " + sco);
+
+
+</script> 

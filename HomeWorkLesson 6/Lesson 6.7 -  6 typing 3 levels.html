@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+function generateText(Letters, length) {
+	var text = "";
+	for (var i = 0; i < length; i++){
+		var n = getRandomNumber(Letters.length -1);
+		text = text + Letters[n];
+		}
+	return text;
+}
+
+function getRandomNumber(max) {
+		return Math.round(Math.random() * max);
+			}
+
+alert("Hello in programm for pechat learnin!");
+
+while(true) {
+	alert("Put the four fingers of the left hand on the letters: a, s, d, f.");
+	var text = generateText(["a", "f"], 10); 
+	var userText = prompt(text);
+	if(userText == text){
+		alert("Right! Go next level 2");
+		break;
+		} else {
+			alert("wrong. Plese - repeat");
+		}
+	}
+
+while(true) {
+	alert("Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной");
+	var text = generateText(["ы", "в"], 10); 
+	var userText = prompt(text);
+	if(userText == text){
+		alert("Right! Go next level 3");
+		break;
+		} else {
+			alert("wrong. Plese - repeat");
+		}
+	}
+
+while(true) {
+	alert("Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний -— на Л, указательный — на О. Запомните расположение пальцев");
+	var text = generateText(["О", "Ж"], 10); 
+	var userText = prompt(text);
+	if(userText == text){
+		alert("Right! Goodbye!");
+		break;
+		} else {
+			alert("wrong. Plese - repeat");
+		}
+	}
+
+
+
+
+</script> 

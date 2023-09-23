@@ -13,19 +13,27 @@ function checkTheNumber (enter) {
 		return enter;
 }
 
-
-function summOfArray(massive) {
-	let sum = 0;
-	for (var i = 0; i < massive.length; i++) {
-		sum += parseInt(massive[i]);
+function checkEmptyArray(massive) {
+	if (massive == []) {
+		massive = "Вы ничего не ввели"
 	}
-	return sum
+	return massive
+}
+
+function parityOfNumber(massive) {
+	let parityArray = []
+	for (var i = 0; i < massive.length; i++) {
+		if (!(massive[i] % 2)) {
+			parityArray.push(massive[i]);
+		} ;
+	}
+	return parityArray
 }
 
 let newArray = [];
 let agr;
 do{
-	agr = prompt(`Количество введенных чисел: ${newArray.length}\nВводите числа, которые нужно суммировать и нажимайте Enter. \n\nЕсли хотите узнать сумму чисел, оставьте поле пустым и нажмите Enter`);
+	agr = prompt(`Количество введенных чисел: ${newArray.length}\nВводите числа, из которых нужно определить минималььное и нажимайте Enter. \n\nЕсли закончили вводу, оставьте поле пустым и нажмите Enter`);
 		if (agr) {
 			agr = checkTheNumber(agr);
 				if (!agr)
@@ -34,8 +42,9 @@ do{
 			}
 } while (agr);
 
+
+result = parityOfNumber(newArray);
 alert(newArray);
-result = summOfArray(newArray);
 alert(result);
 
 </script> 

@@ -14,18 +14,21 @@ function checkTheNumber (enter) {
 }
 
 
-function summOfArray(massive) {
-	let sum = 0;
-	for (var i = 0; i < massive.length; i++) {
-		sum += parseInt(massive[i]);
+function minOfArray(massive) {
+	let min = massive[0]
+	for (var i = 1; i < massive.length; i++) {
+		let check = massive[i];
+		if (check <= min) {
+			min = check;
+		} ;
 	}
-	return sum
+	return min
 }
 
 let newArray = [];
 let agr;
 do{
-	agr = prompt(`Количество введенных чисел: ${newArray.length}\nВводите числа, которые нужно суммировать и нажимайте Enter. \n\nЕсли хотите узнать сумму чисел, оставьте поле пустым и нажмите Enter`);
+	agr = prompt(`Количество введенных чисел: ${newArray.length}\nВводите числа, из которых нужно определить минималььное и нажимайте Enter. \n\nЕсли закончили вводу, оставьте поле пустым и нажмите Enter`);
 		if (agr) {
 			agr = checkTheNumber(agr);
 				if (!agr)
@@ -35,7 +38,7 @@ do{
 } while (agr);
 
 alert(newArray);
-result = summOfArray(newArray);
+result = minOfArray(newArray);
 alert(result);
 
 </script> 
